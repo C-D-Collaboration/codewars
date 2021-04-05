@@ -13,9 +13,5 @@ class EightKata
   def self.minmax_by list, &block
     return [nil,nil] if list.empty?
     list.minmax_by(&block)
-    # result = []
-    # result << list.min
-    # result << list.max
-    # result
   end
 end

@@ -23,7 +23,7 @@ RSpec.describe AddLength do
     expect(Encode.encode('abc')).to eq('123')
     expect(Encode.encode('ABCD')).to eq('1234')
     expect(Encode.encode('ZzzzZ')).to eq('2626262626')
-    # expect(Encode.encode('abc-#@5')).to eq('123-#@5')
-    # expect(Encode.encode('this is a long string!! Please [encode] @C0RrEctly')).to eq('208919 919 1 1215147 1920189147!! 161251195 [51431545] @30181853201225')
+    expect(Encode.encode('abc-#@5')).to eq('123-#@5')
+    expect(Encode.encode('this is a long string!! Please [encode] @C0RrEctly')).to eq('208919 919 1 1215147 1920189147!! 161251195 [51431545] @30181853201225')
   end
 end

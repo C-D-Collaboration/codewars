@@ -2,6 +2,7 @@ require 'rspec'
 require "./lib/7kata/add_length"
 require "./lib/7kata/vowel_2_index"
 require "./lib/7kata/encode"
+require "./lib/7kata/isogram"
 
 RSpec.describe AddLength do
   it 'returns an array/list with the length of each word added to each element' do
@@ -25,5 +26,14 @@ RSpec.describe AddLength do
     expect(Encode.encode('ZzzzZ')).to eq('2626262626')
     expect(Encode.encode('abc-#@5')).to eq('123-#@5')
     expect(Encode.encode('this is a long string!! Please [encode] @C0RrEctly')).to eq('208919 919 1 1215147 1920189147!! 161251195 [51431545] @30181853201225')
+  end
+
+  it "can find isograms" do
+    expect(Isogram.is_isogram("Dermatoglyphics")).to eq(true)
+    expect(Isogram.is_isogram("isogram")).to eq(true)
+    expect(Isogram.is_isogram("aba")).to eq(false)
+    expect(Isogram.is_isogram("moOse")).to eq(false)
+    expect(Isogram.is_isogram("isIsogram")).to eq(false)
+    expect(Isogram.is_isogram("")).to eq(true)
   end
 end
